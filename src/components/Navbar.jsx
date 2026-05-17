@@ -13,7 +13,7 @@ export default function Navbar() {
         <img className="brand-logo" src={siteConfig.assets.logo} alt={siteConfig.assets.logoAlt} />
         <span className="brand-text">
           <span>{siteConfig.name}</span>
-          <small>{siteConfig.title}</small>
+          <small>{siteConfig.brandTagline}</small>
         </span>
       </Link>
       <button
