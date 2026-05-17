@@ -54,8 +54,10 @@ export const siteConfig = {
   },
   googleReviewsUrl: "",
   ctaLinks: {
-    primary: "/contact",
+    primary: "/#home-plan",
     consultation: "/contact",
+    buyerQuiz: "/#home-plan",
+    sellerQuiz: "/#home-plan",
     buyer: "/buyers",
     seller: "/sellers",
     valuation: "/contact"
@@ -163,6 +165,18 @@ export const siteConfig = {
     { name: "name", label: "Name", type: "text", required: true },
     { name: "email", label: "Email", type: "email", required: true },
     { name: "phone", label: "Phone", type: "tel", required: false }
+  ],
+  buyerQuizQuestions: [
+    { name: "area", label: "What area are you hoping to buy in?", options: ["Greater Orlando", "Orange County", "Seminole County", "Lake County", "Osceola County", "Not sure yet"] },
+    { name: "timeline", label: "When would you like to buy?", options: ["Now", "1-3 months", "3-6 months", "6+ months", "Just researching"] },
+    { name: "priceRange", label: "What price range feels closest?", options: ["Under $300k", "$300k-$450k", "$450k-$650k", "$650k+", "Not sure yet"] },
+    { name: "priority", label: "What would help most right now?", options: ["Understanding financing", "Finding the right area", "Learning the process", "Touring homes", "Talking through options"] }
+  ],
+  sellerQuizQuestions: [
+    { name: "area", label: "Where is the home located?", options: ["Orange County", "Seminole County", "Lake County", "Osceola County", "Volusia County", "Other Central Florida area"] },
+    { name: "timeline", label: "When are you thinking about selling?", options: ["Now", "1-3 months", "3-6 months", "6+ months", "Just researching"] },
+    { name: "homeValue", label: "What value range feels closest?", options: ["Under $300k", "$300k-$450k", "$450k-$650k", "$650k+", "Not sure yet"] },
+    { name: "priority", label: "What matters most right now?", options: ["Honest pricing", "Prep advice", "Marketing plan", "Timing the move", "Talking through options"] }
   ],
   testimonials: [],
   footerDisclaimer:
