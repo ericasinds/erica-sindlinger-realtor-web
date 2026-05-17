@@ -1,27 +1,53 @@
+import { CheckCircle2, Home, KeyRound, Map, Search } from "lucide-react";
+import { CTAButton } from "../components/Button.jsx";
+import Card from "../components/Card.jsx";
+import LeadForm from "../components/LeadForm.jsx";
 import PageHero from "../components/PageHero.jsx";
-import LeadQuiz from "../components/LeadQuiz.jsx";
+import SEO from "../components/SEO.jsx";
+import SectionWrapper from "../components/SectionWrapper.jsx";
+import { siteConfig } from "../config/siteConfig.js";
 
 export default function Buyers() {
   return (
     <>
+      <SEO
+        title="Buyers"
+        description="Buyer guidance for Orlando and Central Florida homes with Erica Sindlinger, Realtor with POP Realty powered by Sellstate."
+      />
       <PageHero eyebrow="For buyers" title="Find a home that fits your life, not just your search filters.">
-        Buying can feel big. Erica helps you slow the process down, understand your
-        options, and make confident decisions.
+        {siteConfig.buyerContent.intro}
       </PageHero>
-      <section className="card-grid three section">
-        {["Clarify your goals", "Tour with intention", "Write with confidence"].map((title) => (
-          <article className="info-card" key={title}>
-            <h3>{title}</h3>
-            <p>
-              Thoughtful guidance keeps your search focused, your questions answered,
-              and your decisions connected to what matters most.
-            </p>
-          </article>
-        ))}
-      </section>
-      <section className="section">
-        <LeadQuiz />
-      </section>
+
+      <SectionWrapper eyebrow="Buyer process" title="A clear path from search to closing.">
+        <div className="grid four">
+          {siteConfig.buyerContent.steps.map((step, index) => (
+            <Card key={step.title} icon={[Search, Map, Home, KeyRound][index]} title={step.title}>
+              <p>{step.text}</p>
+            </Card>
+          ))}
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper className="soft-section" eyebrow="Who Erica helps" title="Support for every kind of buyer.">
+        <div className="grid three">
+          {["First-time buyers who want education", "Move-up buyers balancing timing", "Relocation buyers learning Central Florida", "Families comparing neighborhoods", "Design-minded buyers seeing potential", "Buyers who want patience, not pressure"].map((item) => (
+            <Card key={item} icon={CheckCircle2} title={item}>
+              <p>Erica keeps the process grounded in your budget, timeline, and real priorities.</p>
+            </Card>
+          ))}
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper>
+        <LeadForm
+          title="Start Your Buyer Plan"
+          intro="Tell Erica where you are in the buying process and what kind of home or area you are considering."
+          defaultInterest="Buying"
+        />
+        <div className="button-row">
+          <CTAButton to="/service-areas" variant="secondary">Explore Service Areas</CTAButton>
+        </div>
+      </SectionWrapper>
     </>
   );
 }
