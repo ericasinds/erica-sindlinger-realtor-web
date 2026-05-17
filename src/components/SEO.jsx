@@ -17,7 +17,11 @@ export default function SEO({ title, description, image, type = "website", schem
   const pageTitle = title ? siteConfig.seo.titleTemplate.replace("%s", title) : siteConfig.seo.defaultTitle;
   const pageDescription = description || siteConfig.seo.description;
   const canonical = `${siteConfig.baseUrl}${location.pathname === "/" ? "" : location.pathname}`;
-  const imageUrl = image?.startsWith("http") ? image : `${siteConfig.baseUrl}${image || siteConfig.seo.image}`;
+  const rawImage = image || siteConfig.seo.image;
+  const imageUrl =
+    rawImage?.startsWith("http") || rawImage?.startsWith("data:")
+      ? rawImage
+      : `${siteConfig.baseUrl}${rawImage}`;
 
   useEffect(() => {
     document.title = pageTitle;
