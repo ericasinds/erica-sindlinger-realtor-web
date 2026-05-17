@@ -1,11 +1,21 @@
-import { HeartHandshake, Home as HomeIcon, KeyRound, MapPin, Search, Sparkles, TrendingUp } from "lucide-react";
+import {
+  BookOpen,
+  Compass,
+  Handshake,
+  HeartHandshake,
+  Home as HomeIcon,
+  KeyRound,
+  MapPin,
+  ShieldCheck,
+  Sparkles,
+  TrendingUp
+} from "lucide-react";
 import { CTAButton } from "../components/Button.jsx";
 import Card from "../components/Card.jsx";
 import LeadQuiz from "../components/LeadQuiz.jsx";
 import SEO from "../components/SEO.jsx";
 import SectionWrapper from "../components/SectionWrapper.jsx";
 import ServiceAreaCard from "../components/ServiceAreaCard.jsx";
-import StatCard from "../components/StatCard.jsx";
 import TestimonialCard from "../components/TestimonialCard.jsx";
 import { siteConfig } from "../config/siteConfig.js";
 
@@ -14,19 +24,19 @@ export default function Home() {
 
   return (
     <>
-      <SEO title="Orlando Area Realtor" />
+      <SEO title="Central Florida Realtor" />
       <section className="hero">
         <div className="hero-copy reveal">
           <p className="eyebrow">{siteConfig.market} real estate</p>
-          <h1>Real estate guidance for the chapter you are stepping into next.</h1>
+          <h1>Central Florida real estate guidance that puts people first.</h1>
           <p>
-            {siteConfig.name} helps buyers and sellers across Central Florida make
-            confident moves with a personal, relationship-first approach backed by
-            {` ${siteConfig.brand}`} and powered by {siteConfig.brokerage}.
+            {siteConfig.name} helps buyers and sellers make informed decisions without
+            pressure. As a {siteConfig.localSince} and Realtor with {siteConfig.brokerage},
+            she brings patient education, honest guidance, and strong advocacy to every move.
           </p>
           <div className="button-row">
             <CTAButton to="/contact">Start Your Home Plan</CTAButton>
-            <CTAButton to="/about" variant="secondary">Meet Erica</CTAButton>
+            <CTAButton to={siteConfig.ctaLinks.consultation} variant="secondary">Book a Consultation</CTAButton>
           </div>
         </div>
         <div className="hero-media reveal">
@@ -39,19 +49,15 @@ export default function Home() {
 
       <SectionWrapper
         eyebrow="Who I help"
-        title="For buyers, sellers, and people planning their next move."
-        intro="The process may look different for every client, but the goal is the same: clear advice, steady communication, and decisions that feel aligned with real life."
+        title="For people who want to feel informed, not pushed."
+        intro="Erica adapts to each client's needs and keeps the process grounded in education, comfort, and practical next steps."
       >
         <div className="grid three">
-          <Card icon={HomeIcon} title="Buyers">
-            <p>From first-time buyers to seasoned movers, Erica helps you compare options and move with clarity.</p>
-          </Card>
-          <Card icon={Sparkles} title="Sellers">
-            <p>Prepare, price, and present your home with a plan that respects both the market and your next chapter.</p>
-          </Card>
-          <Card icon={HeartHandshake} title="Life transitions">
-            <p>Real estate is rarely just about property. It is about timing, family, goals, and what comes next.</p>
-          </Card>
+          {siteConfig.whoIHelp.map((item, index) => (
+            <Card key={item.title} icon={[HomeIcon, Compass, TrendingUp, MapPin, BookOpen][index]} title={item.title}>
+              <p>{item.text}</p>
+            </Card>
+          ))}
         </div>
       </SectionWrapper>
 
@@ -62,37 +68,40 @@ export default function Home() {
           </div>
           <div>
             <p className="eyebrow">Erica's story</p>
-            <h2>Raised around real estate. Drawn to homes. Built for relationships.</h2>
+            <h2>Lifelong local roots, a soft spot for homes, and a heart for what is possible.</h2>
+            <p>{siteConfig.personalStory.short}</p>
             <p>
-              Erica grew up watching her dad buy, sell, and flip homes. That early exposure,
-              paired with her love of interior design, shaped the way she sees real estate:
-              as a chance to help people move into a new season with more confidence and less overwhelm.
+              Licensed since {siteConfig.yearsInRealEstateStart}, Erica is passionate about helping
+              people understand the process and accomplish goals that may not have always felt accessible.
             </p>
             <CTAButton to="/about" variant="secondary">Read More</CTAButton>
           </div>
         </div>
       </SectionWrapper>
 
-      <SectionWrapper eyebrow="Why work with me" title="Warm guidance with a practical plan.">
-        <div className="grid four">
-          <StatCard value="1:1" label="Relationship-first guidance from first conversation to closing." />
-          <StatCard value="Local" label="Orlando and Central Florida market context you can actually use." />
-          <StatCard value="Design" label="A design-informed eye for presentation, flow, and possibility." />
-          <StatCard value="Clear" label="Straightforward next steps, communication, and support." />
+      <SectionWrapper eyebrow="Why work with Erica" title="Calm guidance, clear education, and protective advocacy.">
+        <div className="grid three">
+          {siteConfig.differentiators.map((item, index) => (
+            <Card key={item.title} icon={[HeartHandshake, BookOpen, ShieldCheck, MapPin, Handshake, Sparkles][index]} title={item.title}>
+              <p>{item.text}</p>
+            </Card>
+          ))}
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="soft-section" eyebrow="Buyer pathway" title="A calmer way to buy.">
+      <SectionWrapper className="soft-section" eyebrow="Buyer pathway" title="A calmer way to buy with less confusion.">
+        <p className="section-note">{siteConfig.buyerContent.intro}</p>
         <div className="grid four">
           {siteConfig.buyerContent.steps.map((step, index) => (
-            <Card key={step.title} icon={[Search, MapPin, HomeIcon, KeyRound][index]} title={step.title}>
+            <Card key={step.title} icon={[BookOpen, MapPin, HomeIcon, KeyRound][index]} title={step.title}>
               <p>{step.text}</p>
             </Card>
           ))}
         </div>
       </SectionWrapper>
 
-      <SectionWrapper eyebrow="Seller pathway" title="A clear plan before your home hits the market.">
+      <SectionWrapper eyebrow="Seller pathway" title="Honest pricing, thoughtful prep, and strong negotiation.">
+        <p className="section-note">{siteConfig.sellerContent.intro}</p>
         <div className="grid four">
           {siteConfig.sellerContent.steps.map((step, index) => (
             <Card key={step.title} icon={[Sparkles, TrendingUp, MapPin, HeartHandshake][index]} title={step.title}>
@@ -105,8 +114,8 @@ export default function Home() {
       <SectionWrapper
         className="soft-section"
         eyebrow="Service areas"
-        title="Serving Orlando and Central Florida communities."
-        intro="The first version includes editable service area cards so this can grow into stronger local SEO pages over time."
+        title="Greater Orlando and Central Florida, with local context."
+        intro={siteConfig.serviceAreaIntro}
       >
         <div className="grid three">
           {siteConfig.serviceAreas.slice(0, 6).map((area) => (
@@ -118,7 +127,7 @@ export default function Home() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper eyebrow="Client proof" title="Real client stories will live here." centered>
+      <SectionWrapper eyebrow="Reviews and proof" title="Real client stories will live here." centered>
         {hasTestimonials ? (
           <div className="grid three">
             {siteConfig.testimonials.slice(0, 3).map((testimonial) => (
@@ -128,7 +137,10 @@ export default function Home() {
         ) : (
           <div className="card empty-state">
             <h3>Testimonials coming soon</h3>
-            <p>Once Erica adds real reviews, this section will automatically display them from the site config.</p>
+            <p>Erica does not display placeholder reviews. Until real testimonials are added, the best next step is a simple conversation.</p>
+            <div className="button-row center-row">
+              <CTAButton to="/contact" variant="secondary">Schedule a Consultation</CTAButton>
+            </div>
           </div>
         )}
       </SectionWrapper>
@@ -138,7 +150,7 @@ export default function Home() {
       </SectionWrapper>
 
       <SectionWrapper centered eyebrow="Ready when you are" title="Start with a conversation, not pressure.">
-        <p>Whether you are buying, selling, or simply exploring what is possible, Erica can help you sort through the next step.</p>
+        <p>Whether you are buying, selling, both, or simply exploring what is possible, Erica can help you sort through the next step with honesty and patience.</p>
         <div className="button-row">
           <CTAButton to="/contact">Contact Erica</CTAButton>
           <CTAButton href={`tel:${siteConfig.phone.replaceAll("-", "")}`} variant="secondary">Call {siteConfig.phone}</CTAButton>
