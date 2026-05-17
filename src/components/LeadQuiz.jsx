@@ -1,6 +1,6 @@
-import { Send } from "lucide-react";
 import { useState } from "react";
-import { siteConfig } from "../siteConfig.js";
+import { siteConfig } from "../config/siteConfig.js";
+import LeadForm from "./LeadForm.jsx";
 
 const initialAnswers = siteConfig.quizQuestions.reduce((answers, question) => {
   answers[question.name] = "";
@@ -9,7 +9,6 @@ const initialAnswers = siteConfig.quizQuestions.reduce((answers, question) => {
 
 export default function LeadQuiz() {
   const [answers, setAnswers] = useState(initialAnswers);
-  const [contact, setContact] = useState({ name: "", email: "", phone: "" });
   const [submitted, setSubmitted] = useState(false);
 
   function updateAnswer(name, value) {
@@ -18,21 +17,19 @@ export default function LeadQuiz() {
 
   function submitLead(event) {
     event.preventDefault();
-    console.log("Lead form ready for CRM/webhook:", { answers, contact });
     setSubmitted(true);
   }
 
   if (submitted) {
     return (
-      <section className="lead-box" aria-live="polite">
-        <p className="eyebrow">Thank you</p>
-        <h2>Your home plan request is ready.</h2>
-        <p>
-          This first version stores the form connection as a placeholder. When
-          your CRM is ready, this can send the details directly into your follow-up
-          system.
-        </p>
-      </section>
+      <div aria-live="polite">
+        <LeadForm
+          title="Almost done"
+          intro="Add your contact details and Erica can follow up with a more personal next step."
+          compact
+          defaultInterest={answers.interest}
+        />
+      </div>
     );
   }
 
@@ -65,36 +62,7 @@ export default function LeadQuiz() {
           </fieldset>
         ))}
       </div>
-      <div className="contact-grid">
-        <label>
-          Name
-          <input
-            required
-            value={contact.name}
-            onChange={(event) => setContact({ ...contact, name: event.target.value })}
-          />
-        </label>
-        <label>
-          Email
-          <input
-            required
-            type="email"
-            value={contact.email}
-            onChange={(event) => setContact({ ...contact, email: event.target.value })}
-          />
-        </label>
-        <label>
-          Phone
-          <input
-            value={contact.phone}
-            onChange={(event) => setContact({ ...contact, phone: event.target.value })}
-          />
-        </label>
-      </div>
-      <button className="button primary" type="submit">
-        <Send size={18} />
-        Send My Home Plan
-      </button>
+      <button className="button primary" type="submit">Continue</button>
     </form>
   );
 }
