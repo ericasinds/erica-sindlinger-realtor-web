@@ -1,4 +1,4 @@
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { siteConfig } from "../config/siteConfig.js";
@@ -30,8 +30,11 @@ export default function Navbar() {
             {item.label}
           </NavLink>
         ))}
+        <a className="phone-link" href={`tel:${siteConfig.phone.replaceAll("-", "")}`} onClick={() => setOpen(false)}>
+          <Phone size={17} aria-hidden="true" /> {siteConfig.phone}
+        </a>
         <span className="nav-cta" onClick={() => setOpen(false)}>
-          <CTAButton to="/contact" variant="primary">Start Here</CTAButton>
+          <CTAButton to="/#home-plan" variant="primary">Start Quiz</CTAButton>
         </span>
       </nav>
     </header>
