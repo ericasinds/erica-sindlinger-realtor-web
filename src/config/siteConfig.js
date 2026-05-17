@@ -4,9 +4,12 @@ export const siteConfig = {
   name: "Erica Sindlinger",
   title: "Realtor",
   brand: "POP Realty",
-  brokerage: "Sellstate",
+  brokerage: "Pop Realty powered by Sellstate",
+  brandTagline: "People Over Profit",
   tagline: "People Over Profit",
-  market: "Orlando / Central Florida",
+  market: "Greater Orlando / Central Florida",
+  yearsInRealEstateStart: 2022,
+  localSince: "lifelong Central Florida local",
   phone: "407-280-8199",
   email: "ERICA@ELEEREALTY.com",
   baseUrl: "https://erica-sindlinger-realtor-web.onrender.com",
@@ -15,8 +18,19 @@ export const siteConfig = {
     headshot: headshotData,
     brandPhoto: brandPhotoData,
     logoAlt: "POP Realty People Over Profit powered by Sellstate logo",
-    headshotAlt: "Erica Sindlinger, Orlando area Realtor",
+    headshotAlt: "Erica Sindlinger, Central Florida Realtor",
     brandPhotoAlt: "Erica Sindlinger in a warm neutral interior setting"
+  },
+  brandColors: {
+    cream: "#f7f1ec",
+    warmWhite: "#fffdf9",
+    taupe: "#a98f80",
+    blush: "#d8b9ad",
+    mauve: "#9f7f83",
+    softGold: "#c2a66f",
+    charcoal: "#171514",
+    emerald: "#1f4739",
+    navy: "#23354d"
   },
   colors: {
     cream: "#f7f1ec",
@@ -38,17 +52,19 @@ export const siteConfig = {
     instagram: "#",
     tiktok: "#"
   },
+  googleReviewsUrl: "",
   ctaLinks: {
     primary: "/contact",
+    consultation: "/contact",
     buyer: "/buyers",
     seller: "/sellers",
     valuation: "/contact"
   },
   seo: {
-    defaultTitle: "Erica Sindlinger | Orlando Area Realtor",
+    defaultTitle: "Erica Sindlinger | Central Florida Realtor",
     titleTemplate: "%s | Erica Sindlinger Realtor",
     description:
-      "Erica Sindlinger is an Orlando and Central Florida Realtor with POP Realty powered by Sellstate, helping buyers and sellers move with clear, personal, relationship-first guidance.",
+      "Erica Sindlinger is a lifelong Central Florida local and Realtor with Pop Realty powered by Sellstate, helping buyers and sellers make informed, no-pressure decisions since 2022.",
     image: brandPhotoData,
     twitterCard: "summary_large_image"
   },
@@ -57,38 +73,77 @@ export const siteConfig = {
     priceRange: "$$",
     addressLocality: "Orlando",
     addressRegion: "FL",
-    areaServed: ["Orlando", "Central Florida", "Orange County", "Seminole County", "Volusia County", "Osceola County"]
+    areaServed: [
+      "Greater Orlando",
+      "Central Florida",
+      "Orange County",
+      "Seminole County",
+      "Lake County",
+      "Osceola County",
+      "Volusia County",
+      "Polk County",
+      "Marion County",
+      "Hernando County"
+    ]
   },
+  primaryServiceAreas: ["Greater Orlando", "Orange County", "Seminole County"],
+  extendedServiceAreas: ["Lake County", "Osceola County", "Volusia County", "Polk County", "Marion County", "Hernando County"],
+  serviceAreaIntro:
+    "Erica primarily serves Greater Orlando, Orange County, and Seminole County, with support across nearby Central Florida markets when it is the right fit for the client.",
   serviceAreas: [
-    { name: "Orlando", description: "Central Florida guidance for city living, established neighborhoods, and move-up decisions." },
-    { name: "Winter Park", description: "Thoughtful support for buyers and sellers drawn to charm, design, and location." },
-    { name: "Apopka", description: "Local help for families, first-time buyers, and sellers preparing for what is next." },
-    { name: "Altamonte Springs", description: "Practical real estate guidance near work, schools, parks, and everyday convenience." },
-    { name: "Maitland", description: "Personal support for clients looking for character, access, and long-term fit." },
-    { name: "Lake Mary", description: "Clear strategy for buyers and sellers in one of Seminole County's most loved markets." },
-    { name: "Sanford", description: "Guidance for historic homes, growing neighborhoods, and lifestyle-focused moves." },
-    { name: "Clermont", description: "Support for buyers and sellers exploring west Central Florida space and views." },
-    { name: "Windermere", description: "A calm, prepared approach for distinctive homes and higher-consideration moves." },
-    { name: "Central Florida", description: "Relationship-first real estate help across Orlando and the surrounding counties." }
+    { name: "Greater Orlando", description: "Patient, local guidance for buyers and sellers navigating the heart of Central Florida." },
+    { name: "Orange County", description: "Lifelong local insight for Orlando, Winter Park, Apopka, Maitland, Windermere, and nearby communities." },
+    { name: "Seminole County", description: "Support across Lake Mary, Sanford, Altamonte Springs, and surrounding neighborhoods." },
+    { name: "Lake County", description: "Thoughtful help for clients exploring space, value, and lifestyle west of Orlando." },
+    { name: "Osceola County", description: "Clear guidance for buyers and sellers considering growth markets south of Orlando." },
+    { name: "Volusia County", description: "Local-adjacent support for moves that extend toward the coast and surrounding communities." },
+    { name: "Polk County", description: "Resource-driven representation for nearby markets when the search or sale expands." },
+    { name: "Marion County", description: "Flexible guidance for clients whose goals reach into north Central Florida." },
+    { name: "Hernando County", description: "Support through Erica's network and market knowledge when this area is the right match." },
+    { name: "Central Florida", description: "People-first real estate help across the broader region, always grounded in honest guidance." }
+  ],
+  personalStory: {
+    short:
+      "Erica has lived in Central Florida her whole life. She grew up around home projects and flips through her dad, which gave her a lasting soft spot for homes and the stories they hold.",
+    long: [
+      "Erica grew up around homes because her dad bought and flipped houses while she was growing up. That early exposure shaped the way she sees potential, comfort, and the practical decisions that make a house work for real life.",
+      "Homeownership was not something she saw modeled often in her immediate family or early life. That is part of why she cares so deeply about helping people understand the process, ask questions, and believe that owning a home can be possible for them.",
+      "Her deeper why is helping people accomplish goals, especially clients who did not grow up seeing homeownership as something accessible. She wants people to feel informed, represented, and comfortable instead of rushed or pressured."
+    ]
+  },
+  differentiators: [
+    { title: "Patient, no-pressure guidance", text: "Erica does not want clients making fear-based or pressure-based decisions." },
+    { title: "Clear education through every step", text: "She explains financing, contracts, inspections, negotiations, and next steps in plain language." },
+    { title: "Strong contract negotiation", text: "Erica advocates hard for her clients and keeps their goals protected during the details." },
+    { title: "Lifelong Central Florida knowledge", text: "Her local roots help clients understand areas, timing, lifestyle fit, and market context." },
+    { title: "Resource-driven support network", text: "She uses her network and knowledge to help clients feel represented and supported." },
+    { title: "Personalized strategy", text: "Every client has different needs, so Erica adapts her guidance instead of forcing one process." }
+  ],
+  whoIHelp: [
+    { title: "First-time buyers", text: "Guidance for buyers who want the process explained clearly from the beginning." },
+    { title: "Overwhelmed buyers", text: "Support for people who feel unsure where to start or nervous about making the wrong move." },
+    { title: "Strategic sellers", text: "Honest pricing, preparation, and negotiation support for sellers who want a thoughtful plan." },
+    { title: "Relocating clients", text: "Local context for buyers and sellers moving into, out of, or around Central Florida." },
+    { title: "Education-first clients", text: "A good fit for people who value patience, advocacy, and clear information over pressure." }
   ],
   buyerContent: {
     intro:
-      "Buying a home should feel informed, not rushed. Erica helps you understand your options, compare homes clearly, and move forward when the fit is right.",
+      "Buying a home can feel confusing when no one slows down to explain the process. Erica helps buyers understand financing, neighborhoods, inspections, offers, negotiations, and next steps so they can move forward without fear or pressure.",
     steps: [
-      { title: "Start with your life", text: "Clarify budget, timeline, must-haves, and the kind of home that supports your next chapter." },
-      { title: "Learn the market", text: "Review local inventory, pricing, neighborhood context, and what strong offers look like." },
-      { title: "Tour with intention", text: "Look beyond pretty photos and compare layout, condition, location, and long-term fit." },
-      { title: "Offer and close", text: "Move through contracts, inspections, negotiations, and closing with steady guidance." }
+      { title: "Start with clarity", text: "Talk through budget, financing, timeline, questions, and what feels realistic before jumping into homes." },
+      { title: "Learn the areas", text: "Compare neighborhoods, commute, lifestyle fit, and local market context across Central Florida." },
+      { title: "Tour with confidence", text: "Look at layout, condition, inspection concerns, resale factors, and what each home would actually feel like to live in." },
+      { title: "Offer and negotiate", text: "Understand the contract, terms, contingencies, inspections, repairs, appraisal, and closing steps." }
     ]
   },
   sellerContent: {
     intro:
-      "Selling well starts before the listing goes live. Erica helps you prepare, position, and market your home with care.",
+      "Selling well starts with honest information. Erica helps sellers prepare the home, price with strategy, market thoughtfully, negotiate the full picture, and protect the goals behind the move.",
     steps: [
-      { title: "Prepare", text: "Walk through presentation, repairs, staging, and the small details that shape first impressions." },
-      { title: "Price", text: "Use local data and real buyer behavior to choose a strategy that fits your goals." },
-      { title: "Market", text: "Launch with clear messaging, strong visuals, and a plan to reach qualified buyers." },
-      { title: "Negotiate", text: "Compare offers, protect your priorities, and move toward closing with confidence." }
+      { title: "Prepare honestly", text: "Walk through condition, presentation, repairs, and the details that shape buyer confidence." },
+      { title: "Price with strategy", text: "Use local data and current buyer behavior to choose a pricing plan that supports your goals." },
+      { title: "Market clearly", text: "Position the home with strong visuals, accurate messaging, and a plan to reach the right buyers." },
+      { title: "Negotiate carefully", text: "Review price, terms, timing, contingencies, and risk so you can make an informed decision." }
     ]
   },
   form: {
@@ -98,9 +153,18 @@ export const siteConfig = {
     interests: ["Buying", "Selling", "Buying and selling", "Home valuation", "Just exploring"]
   },
   quizQuestions: [
-    { name: "interest", label: "What are you thinking about?", options: ["Buying", "Selling", "Buying and selling", "Just exploring"] },
-    { name: "timeline", label: "What timeline feels closest?", options: ["Now", "1-3 months", "3-6 months", "6+ months"] },
-    { name: "area", label: "Which area are you interested in?", options: ["Orlando", "Winter Park", "Lake Mary", "Windermere", "Central Florida", "Not sure yet"] }
+    { name: "interest", label: "What are you hoping to do?", options: ["Buying", "Selling", "Both", "Just exploring"] },
+    { name: "area", label: "What area are you interested in?", options: ["Greater Orlando", "Orange County", "Seminole County", "Lake County", "Osceola County", "Not sure yet"] },
+    { name: "timeline", label: "What is your timeline?", options: ["Now", "1-3 months", "3-6 months", "6+ months", "Just researching"] },
+    { name: "priceRange", label: "What price range or current home value range feels closest?", options: ["Under $300k", "$300k-$450k", "$450k-$650k", "$650k+", "Not sure yet"] },
+    { name: "priority", label: "What feels most important right now?", options: ["Understanding the process", "Finding the right area", "Knowing what I can afford", "Pricing my home honestly", "Having someone advocate for me"] }
   ],
-  testimonials: []
+  quizContactFields: [
+    { name: "name", label: "Name", type: "text", required: true },
+    { name: "email", label: "Email", type: "email", required: true },
+    { name: "phone", label: "Phone", type: "tel", required: false }
+  ],
+  testimonials: [],
+  footerDisclaimer:
+    "Erica Sindlinger is a Realtor with Pop Realty powered by Sellstate. Information on this website is for general guidance only and is not a guarantee of results, pricing, availability, or financing terms. Equal Housing Opportunity."
 };
