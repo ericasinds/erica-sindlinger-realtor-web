@@ -27,15 +27,15 @@ export default function Sellers() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="soft-section" eyebrow="Seller strategy" title="Presentation and pricing work together.">
+      <SectionWrapper className="soft-section" eyebrow="Seller strategy" title="Honest guidance before big decisions.">
         <div className="story-split">
           <div className="story-image">
             <img src={siteConfig.assets.brandPhoto} alt={siteConfig.assets.brandPhotoAlt} loading="lazy" />
           </div>
           <div className="feature-list">
-            <div className="feature-item"><h3>Prep with intention</h3><p>Small improvements, editing, and staging choices can shape the way buyers feel in the home.</p></div>
-            <div className="feature-item"><h3>Price with context</h3><p>Erica helps you understand comparable homes, buyer demand, timing, and strategy.</p></div>
-            <div className="feature-item"><h3>Negotiate the full picture</h3><p>Price matters, but so do terms, timing, contingencies, and certainty.</p></div>
+            <div className="feature-item"><h3>Prep with intention</h3><p>Small improvements, editing, and presentation choices can shape the way buyers feel in the home.</p></div>
+            <div className="feature-item"><h3>Price with honesty</h3><p>Erica helps you understand comparable homes, buyer demand, timing, and what the market is actually saying.</p></div>
+            <div className="feature-item"><h3>Negotiate the full picture</h3><p>Price matters, but so do terms, timing, contingencies, risk, and the goals behind your move.</p></div>
           </div>
         </div>
       </SectionWrapper>
