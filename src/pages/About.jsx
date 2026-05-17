@@ -12,27 +12,20 @@ export default function About() {
     <>
       <SEO
         title="About"
-        description="Learn about Erica Sindlinger, an Orlando area Realtor with POP Realty powered by Sellstate, and her relationship-first approach to real estate."
+        description="Learn about Erica Sindlinger, a lifelong Central Florida local and Realtor with Pop Realty powered by Sellstate."
       />
-      <PageHero eyebrow="About Erica" title="A Realtor with a relationship-first heart.">
-        Erica brings a personal, design-minded approach to helping clients buy and sell across Orlando and Central Florida.
+      <PageHero eyebrow="About Erica" title="A lifelong Central Florida local with a people-first approach.">
+        Erica helps clients feel informed, comfortable, and represented through the buying or selling process.
       </PageHero>
 
       <SectionWrapper>
         <div className="story-split">
           <div>
             <p className="eyebrow">Personal story</p>
-            <h2>Real estate has always felt close to home.</h2>
-            <p>
-              Erica grew up around the business through her dad, who bought, sold, and flipped homes.
-              That early exposure gave her an appreciation for what a home can become, while her love
-              of interior design helped her see how spaces support the lives people are building.
-            </p>
-            <p>
-              Today, she approaches real estate from a relationship-driven place. She loves getting to
-              know her clients, understanding what matters to them, and helping them transition into the
-              next chapter of life with care and clarity.
-            </p>
+            <h2>Real estate has always felt personal to Erica.</h2>
+            {siteConfig.personalStory.long.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
           <div className="story-image">
             <img src={siteConfig.assets.brandPhoto} alt={siteConfig.assets.brandPhotoAlt} loading="lazy" />
@@ -40,12 +33,12 @@ export default function About() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="soft-section" eyebrow="Values" title="People over profit is more than a tagline.">
+      <SectionWrapper className="soft-section" eyebrow="Values" title="People Over Profit is more than a tagline.">
         <div className="grid four">
-          <Card icon={Users} title="Relationships first"><p>Clients are people, not transactions. The process starts by listening.</p></Card>
-          <Card icon={Home} title="Home-aware guidance"><p>Erica helps clients think about function, feeling, condition, and fit.</p></Card>
-          <Card icon={Palette} title="Design perspective"><p>A design-informed eye supports buyers seeing potential and sellers preparing well.</p></Card>
-          <Card icon={Heart} title="Calm communication"><p>Clear next steps make big decisions feel more manageable.</p></Card>
+          <Card icon={Users} title="Relationship first"><p>Clients are people, not transactions. The process starts by listening.</p></Card>
+          <Card icon={Home} title="Education matters"><p>Erica explains the process clearly so clients are not making fear-based decisions.</p></Card>
+          <Card icon={Palette} title="Home-aware guidance"><p>Her soft spot for homes and design helps buyers and sellers see both feeling and function.</p></Card>
+          <Card icon={Heart} title="Protective advocacy"><p>She negotiates strongly and works to make sure clients feel supported and represented.</p></Card>
         </div>
       </SectionWrapper>
 
