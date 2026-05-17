@@ -9,9 +9,10 @@ export default function Footer() {
         <img className="footer-logo" src={siteConfig.assets.logo} alt={siteConfig.assets.logoAlt} loading="lazy" />
         <h2>{siteConfig.name}</h2>
         <p>
-          {siteConfig.title} with {siteConfig.brand}, powered by {siteConfig.brokerage}.
-          Serving Orlando and Central Florida with relationship-first guidance.
+          {siteConfig.title} with {siteConfig.brokerage}.
+          Helping Central Florida buyers and sellers since {siteConfig.yearsInRealEstateStart}.
         </p>
+        <p className="footer-disclaimer">{siteConfig.footerDisclaimer}</p>
       </div>
       <div className="footer-links">
         <a href={`tel:${siteConfig.phone.replaceAll("-", "")}`}>{siteConfig.phone}</a>
