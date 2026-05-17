@@ -49,7 +49,7 @@ export const siteConfig = {
     titleTemplate: "%s | Erica Sindlinger Realtor",
     description:
       "Erica Sindlinger is an Orlando and Central Florida Realtor with POP Realty powered by Sellstate, helping buyers and sellers move with clear, personal, relationship-first guidance.",
-    image: brandPhoto,
+    image: brandPhotoData,
     twitterCard: "summary_large_image"
   },
   schema: {
