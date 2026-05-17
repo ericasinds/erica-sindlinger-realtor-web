@@ -12,7 +12,7 @@ export default function Buyers() {
     <>
       <SEO
         title="Buyers"
-        description="Buyer guidance for Orlando and Central Florida homes with Erica Sindlinger, Realtor with POP Realty powered by Sellstate."
+        description="Buyer guidance for Greater Orlando and Central Florida homes with Erica Sindlinger, Realtor with Pop Realty powered by Sellstate."
       />
       <PageHero eyebrow="For buyers" title="Find a home that fits your life, not just your search filters.">
         {siteConfig.buyerContent.intro}
@@ -28,11 +28,18 @@ export default function Buyers() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="soft-section" eyebrow="Who Erica helps" title="Support for every kind of buyer.">
+      <SectionWrapper className="soft-section" eyebrow="Who Erica helps" title="Support for buyers who want clarity before confidence.">
         <div className="grid three">
-          {["First-time buyers who want education", "Move-up buyers balancing timing", "Relocation buyers learning Central Florida", "Families comparing neighborhoods", "Design-minded buyers seeing potential", "Buyers who want patience, not pressure"].map((item) => (
+          {[
+            "First-time buyers who want education",
+            "Buyers unsure where to start",
+            "Relocation buyers learning Central Florida",
+            "Families comparing neighborhoods",
+            "Buyers worried about financing or inspections",
+            "Buyers who want patience, not pressure"
+          ].map((item) => (
             <Card key={item} icon={CheckCircle2} title={item}>
-              <p>Erica keeps the process grounded in your budget, timeline, and real priorities.</p>
+              <p>Erica keeps the process grounded in your budget, timeline, comfort level, and real priorities.</p>
             </Card>
           ))}
         </div>
