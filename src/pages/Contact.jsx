@@ -20,7 +20,7 @@ export default function Contact() {
       <SectionWrapper>
         <div className="contact-layout">
           <Card title="Reach out directly">
-            <p>{siteConfig.brand} powered by {siteConfig.brokerage}</p>
+            <p>{siteConfig.brokerage}</p>
             <p>Serving {siteConfig.market}</p>
             <div className="contact-links">
               <a href={`tel:${siteConfig.phone.replaceAll("-", "")}`}><Phone size={18} /> {siteConfig.phone}</a>
