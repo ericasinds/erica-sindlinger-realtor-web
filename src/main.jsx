@@ -9,11 +9,7 @@ import Home from "./pages/Home.jsx";
 import Sellers from "./pages/Sellers.jsx";
 import ServiceAreas from "./pages/ServiceAreas.jsx";
 import Testimonials from "./pages/Testimonials.jsx";
-import { themeCss } from "./styles/themeParts.js";
-
-const style = document.createElement("style");
-style.textContent = themeCss;
-document.head.appendChild(style);
+import "./styles/global.css";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
