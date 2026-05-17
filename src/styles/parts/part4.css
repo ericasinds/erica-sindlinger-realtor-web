@@ -41,6 +41,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 @media (max-width: 980px) {
+  main { padding-bottom: 86px; }
   .icon-button { display: inline-flex; }
   .nav {
     background: var(--paper);
