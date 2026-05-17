@@ -86,6 +86,7 @@ main { overflow: hidden; }
 .nav a { color: #302b27; font-size: 0.94rem; font-weight: 700; }
 .nav a.active, .nav a:hover { color: var(--mauve); }
 .nav-cta { display: inline-flex; }
+.phone-link { align-items: center; display: inline-flex; gap: 7px; white-space: nowrap; }
 .icon-button {
   align-items: center;
   background: var(--ink);
