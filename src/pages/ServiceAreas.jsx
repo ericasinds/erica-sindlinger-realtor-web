@@ -10,13 +10,13 @@ export default function ServiceAreas() {
     <>
       <SEO
         title="Service Areas"
-        description="Explore Central Florida communities served by Erica Sindlinger, including Orlando, Winter Park, Lake Mary, Sanford, Windermere, Clermont, and nearby areas."
+        description="Explore Greater Orlando and Central Florida service areas for Erica Sindlinger, including Orange, Seminole, Lake, Osceola, Volusia, Polk, Marion, and Hernando counties."
       />
-      <PageHero eyebrow="Local service areas" title="Focused on Orlando and Central Florida communities.">
-        Erica serves buyers and sellers across the Orlando area, with a primary focus on Central Florida communities where lifestyle, timing, and local fit matter.
+      <PageHero eyebrow="Local service areas" title="Greater Orlando guidance with lifelong Central Florida context.">
+        {siteConfig.serviceAreaIntro}
       </PageHero>
 
-      <SectionWrapper eyebrow="Communities" title="Editable area cards for future local SEO pages.">
+      <SectionWrapper eyebrow="Communities" title="Primary and nearby service areas.">
         <div className="grid three">
           {siteConfig.serviceAreas.map((area) => (
             <ServiceAreaCard key={area.name} area={area} />
@@ -25,7 +25,7 @@ export default function ServiceAreas() {
       </SectionWrapper>
 
       <SectionWrapper className="soft-section">
-        <LeadForm title="Ask About an Area" intro="Curious about a specific Central Florida community? Share what you are considering." />
+        <LeadForm title="Ask About an Area" intro="Curious about a Central Florida community? Share what you are considering and Erica can help you think through local fit, timing, and next steps." />
       </SectionWrapper>
     </>
   );
