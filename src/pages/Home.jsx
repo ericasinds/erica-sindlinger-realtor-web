@@ -35,8 +35,8 @@ export default function Home() {
             she brings patient education, honest guidance, and strong advocacy to every move.
           </p>
           <div className="button-row">
-            <CTAButton to="/contact">Start Your Home Plan</CTAButton>
-            <CTAButton to={siteConfig.ctaLinks.consultation} variant="secondary">Book a Consultation</CTAButton>
+            <CTAButton to={siteConfig.ctaLinks.primary}>Start Your Home Plan</CTAButton>
+            <CTAButton href={`tel:${siteConfig.phone.replaceAll("-", "")}`} variant="secondary">Call {siteConfig.phone}</CTAButton>
           </div>
         </div>
         <div className="hero-media reveal">
@@ -145,7 +145,7 @@ export default function Home() {
         )}
       </SectionWrapper>
 
-      <SectionWrapper className="soft-section">
+      <SectionWrapper className="soft-section funnel-section" id="home-plan">
         <LeadQuiz />
       </SectionWrapper>
 
